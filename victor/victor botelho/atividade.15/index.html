@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potenciação</title>
+</head>
+<body>
+    <h1>Resultados da Potenciação</h1>
+    <table border="1">
+        <tr>
+            <th>Base</th>
+            <th>Expoente</th>
+            <th>Resultado</th>
+        </tr>
+        <script>
+            // Definindo a base e o expoente
+            var base = 2;
+            var expoenteMaximo = 8;
+
+            // Laço para calcular a potenciação de 2^0 até 2^8
+            for (var expoente = 0; expoente <= expoenteMaximo; expoente++) {
+                var resultado = 1; // Inicializa o resultado
+
+                // Cálculo da potência
+                for (var i = 0; i < expoente; i++) {
+                    resultado *= base; // Multiplica a base
+                }
+
+                // Exibição dos resultados em formato de tabela
+                document.write("<tr>");
+                document.write("<td>" + base + "</td>");
+                document.write("<td>" + base + "<sup>" + expoente + "</sup></td>");
+                document.write("<td>" + resultado + "</td>");
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Soma de Fibonacci Pares</title>
+</head>
+<body>
+  <h1>Soma de Fibonacci Pares</h1>
+  <p>Insira um número para calcular a soma dos números pares da sequência de Fibonacci até esse número:</p>
+  <input id="input-number" type="number" value="50000">
+  <button onclick="calculateSum()">Calcular</button>
+  <div id="resultado"></div>
+
+  <script>
+    function calculateSum() {
+      let limit = parseInt(document.getElementById("input-number").value);
+      let sequence = [0, 1];
+      while (sequence[sequence.length - 1] + sequence[sequence.length - 2] <= limit) {
+        sequence.push(sequence[sequence.length - 1] + sequence[sequence.length - 2]);
+      }
+      let evenSum = sequence.filter(num => num % 2 === 0).reduce((acc, current) => acc + current, 0);
+      document.getElementById("resultado").innerHTML = `A soma dos números pares da sequência de Fibonacci até ${limit} é: ${evenSum}`;
+    }
+  </script>
+</body>
+</html>

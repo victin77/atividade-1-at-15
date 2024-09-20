@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potenciação de 2^8</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Potenciação de 2<sup>8</sup></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Expoente (n)</th>
+                <th>Resultado (2<sup>n</sup>)</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaResultados"></tbody>
+    </table>
+
+    <script>
+        const base = 2;
+        const expoenteMaximo = 8;
+        let potencia = 1; // Inicializa a potência com 2^0 (que é 1)
+        const tbody = document.getElementById("tabelaResultados");
+
+        // Função para calcular potência sem usar loops
+        function calcularPotencia(n) {
+            if (n === 0) return 1; // 2^0 = 1
+            return base * calcularPotencia(n - 1); // 2^n = 2 * 2^(n-1)
+        }
+
+        // Calculando e exibindo os resultados
+        for (let i = 0; i <= expoenteMaximo; i++) {
+            potencia = calcularPotencia(i);
+            const tr = document.createElement("tr");
+            const tdExpoente = document.createElement("td");
+            const tdResultado = document.createElement("td");
+
+            tdExpoente.innerText = i;
+            tdResultado.innerHTML = `${base}<sup>${i}</sup> = ${potencia}`;
+
+            tr.appendChild(tdExpoente);
+            tr.appendChild(tdResultado);
+            tbody.appendChild(tr);
+        }
+    </script>
+</body>
+</html>

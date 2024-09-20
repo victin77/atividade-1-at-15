@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inverter Sequência de Caracteres</title>
+</head>
+<body>
+    <h1>Inverter Sequência de Caracteres</h1>
+    <label for="inputString">Digite a sequência:</label>
+    <input type="text" id="inputString">
+    <button id="invertButton">Inverter</button>
+    <p id="resultado"></p>
+
+    <script>
+        document.getElementById("invertButton").onclick = function() {
+            // Obtendo a sequência de caracteres do input
+            var str = document.getElementById("inputString").value;
+            var invertedStr = "";
+
+            // Percorrendo a string de trás para frente
+            for (var i = str.length - 1; i >= 0; i--) {
+                invertedStr += str[i]; // Adiciona o caractere atual à nova string
+            }
+
+            // Exibindo o resultado
+            document.getElementById("resultado").innerText = `Sequência invertida: ${invertedStr}`;
+        };
+    </script>
+</body>
+</html>

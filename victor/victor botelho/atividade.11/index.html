@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo do Delta</title>
+    <script>
+        function calcularDelta() {
+            // Coeficientes
+            const a = 2;
+            const b = 8;
+            const c = -24;
+
+            // Cálculo do Delta
+            const delta = b * b - 4 * a * c;
+
+            // Exibir resultado
+            document.getElementById("resultado").innerText = "O valor de Delta (Δ) é: " + delta;
+        }
+    </script>
+</head>
+<body>
+    <h1>Cálculo do Delta de uma Função de Segundo Grau</h1>
+    <button onclick="calcularDelta()">Calcular Delta</button>
+    <p id="resultado"></p>
+</body>
+</html>
